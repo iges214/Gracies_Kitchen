@@ -1,0 +1,390 @@
+/* ==========================================================================
+   CONTACT MODAL / BOTTOM SHEET STYLES
+   ========================================================================== */
+
+.contact-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background-color: rgba(14, 14, 17, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: contactFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes contactFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.contact-sheet-modal {
+  width: 100%;
+  max-width: 580px;
+  background-color: #faf7f2;
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  border: 1px solid rgba(40, 30, 20, 0.12);
+  border-bottom: none;
+  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.28);
+  padding: 12px 20px 24px;
+  max-height: 85vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  animation: sheetSlideUp 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes sheetSlideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Grab handle for touch ergonomics */
+.sheet-drag-handle {
+  width: 44px;
+  height: 5px;
+  background-color: rgba(40, 30, 20, 0.2);
+  border-radius: 4px;
+  margin: 4px auto 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sheet-drag-handle:hover {
+  background-color: rgba(40, 30, 20, 0.4);
+}
+
+/* Header */
+.contact-sheet-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(40, 30, 20, 0.08);
+}
+
+.sheet-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-olive, #344732);
+  background-color: rgba(52, 71, 50, 0.1);
+  padding: 3px 9px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+}
+
+.sheet-title {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2a2521;
+  line-height: 1.25;
+}
+
+.sheet-subtitle {
+  font-size: 0.82rem;
+  color: #6b645b;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.sheet-close-btn {
+  background: rgba(40, 30, 20, 0.06);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  color: #4a433d;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.sheet-close-btn:hover {
+  background: rgba(40, 30, 20, 0.15);
+  color: #111;
+  transform: scale(1.05);
+}
+
+/* Contact Channels List */
+.contact-channels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.contact-channel-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: #ffffff;
+  border: 1px solid rgba(40, 30, 20, 0.08);
+  border-radius: 16px;
+  padding: 12px 14px;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  color: inherit;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.contact-channel-card:active {
+  transform: scale(0.98);
+}
+
+.contact-channel-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(40, 30, 20, 0.2);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+}
+
+.channel-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wa-icon-bg {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #ffffff;
+}
+
+.phone-icon-bg {
+  background: linear-gradient(135deg, #344732, #263624);
+  color: #ffffff;
+}
+
+.email-icon-bg {
+  background: linear-gradient(135deg, #d4a363, #b88647);
+  color: #ffffff;
+}
+
+.channel-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.channel-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.channel-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #2a2521;
+}
+
+.channel-tag {
+  font-size: 0.64rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.tag-fast {
+  background-color: rgba(37, 211, 102, 0.15);
+  color: #128c7e;
+}
+
+.tag-call {
+  background-color: rgba(52, 71, 50, 0.12);
+  color: #2a3a28;
+}
+
+.channel-val {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #4a433d;
+  margin-top: 1px;
+  word-break: break-all;
+}
+
+.channel-hint {
+  font-size: 0.72rem;
+  color: #8c8278;
+  margin-top: 2px;
+}
+
+.channel-arrow {
+  font-size: 1.15rem;
+  color: #8c8278;
+  transition: transform 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.contact-channel-card:hover .channel-arrow {
+  transform: translateX(3px);
+  color: var(--color-olive, #344732);
+}
+
+/* Social Media Section */
+.social-channels-section {
+  padding-top: 14px;
+  border-top: 1px solid rgba(40, 30, 20, 0.08);
+  margin-bottom: 16px;
+}
+
+.social-section-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #6b645b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.social-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.social-brand-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid rgba(40, 30, 20, 0.08);
+  border-radius: 14px;
+  padding: 10px 6px;
+  text-decoration: none;
+  transition: all 0.2s;
+  color: inherit;
+}
+
+.social-brand-card:active {
+  transform: scale(0.96);
+}
+
+.social-brand-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(40, 30, 20, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.social-card-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.ig-gradient {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+
+.tt-black {
+  background-color: #010101;
+}
+
+.wa-green {
+  background-color: #25d366;
+}
+
+.social-card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-brand-name {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #2a2521;
+}
+
+.social-handle {
+  font-size: 0.65rem;
+  color: #8c8278;
+}
+
+/* Footer / Staff Admin Portal Access */
+.contact-sheet-footer {
+  padding-top: 10px;
+}
+
+.btn-sheet-admin {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: rgba(52, 71, 50, 0.08);
+  border: 1px dashed rgba(52, 71, 50, 0.25);
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-olive, #344732);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.btn-sheet-admin:hover {
+  background-color: rgba(52, 71, 50, 0.16);
+  border-color: var(--color-olive, #344732);
+}
+
+/* Desktop Modal Presentation (Screens > 900px) */
+@media (min-width: 901px) {
+  .contact-sheet-overlay {
+    align-items: center;
+    padding: 24px;
+    background-color: rgba(14, 14, 17, 0.72);
+  }
+
+  .contact-sheet-modal {
+    max-width: 540px;
+    border-radius: 24px;
+    border: 1px solid rgba(40, 30, 20, 0.12);
+    box-shadow: 0 24px 60px rgba(20, 16, 12, 0.35), 0 4px 16px rgba(0, 0, 0, 0.15);
+    padding: 24px 26px 26px;
+    animation: contactModalScaleUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .sheet-drag-handle {
+    display: none;
+  }
+
+  .contact-channels-list {
+    margin-bottom: 20px;
+  }
+}
+
+@keyframes contactModalScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

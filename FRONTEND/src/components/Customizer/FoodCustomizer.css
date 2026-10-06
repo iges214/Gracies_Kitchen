@@ -1,0 +1,477 @@
+/* ==========================================================================
+   MOBILE FOOD DETAILS & CUSTOMIZER MODAL STYLES (INSPIRED BY REF IMAGE 1)
+   ========================================================================== */
+
+.customizer-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  animation: fadeIn 0.2s ease;
+}
+
+.mobile-detail-view {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 520px;
+  height: 92vh;
+  max-height: 860px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
+  position: relative;
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* 1. Top Hero Food Media (Image 1 Style) */
+.detail-media-header {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  min-height: 280px;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.detail-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.92);
+}
+
+.media-nav-btn {
+  position: absolute;
+  top: 18px;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background-color: rgba(14, 14, 17, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.media-nav-btn:hover {
+  background-color: rgba(14, 14, 17, 0.9);
+  border-color: var(--color-gold);
+}
+
+.back-btn {
+  left: 18px;
+}
+
+.heart-btn {
+  right: 18px;
+}
+
+/* 2. Floating Content Sheet */
+.detail-content-sheet {
+  flex: 1;
+  background-color: var(--bg-card);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  margin-top: -24px;
+  position: relative;
+  z-index: 2;
+  overflow-y: auto;
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.sheet-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.spice-tag-pill {
+  display: inline-block;
+  background-color: rgba(224, 96, 65, 0.18);
+  border: 1px solid rgba(224, 96, 65, 0.35);
+  color: var(--color-spice);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  width: fit-content;
+  margin-bottom: 6px;
+}
+
+.title-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-md);
+  margin-bottom: 4px;
+}
+
+.sheet-food-title {
+  font-size: 1.5rem;
+  color: var(--text-light);
+  line-height: 1.2;
+}
+
+.sheet-food-price {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+.sheet-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--space-sm);
+}
+
+.rating-stars {
+  color: var(--color-gold);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.rating-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.volume-discount-applied {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2a9d8f;
+  background-color: rgba(42, 157, 143, 0.15);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  margin-left: auto;
+}
+
+.sheet-description {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.sheet-divider {
+  height: 1px;
+  background-color: var(--border-subtle);
+  margin: var(--space-xs) 0;
+}
+
+.customize-section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+/* Customizer Blocks */
+.customizer-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.block-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.block-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.block-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Volume Pills (Image 1 Style) */
+.volume-pills-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.vol-pill {
+  flex: 1;
+  min-width: 80px;
+  padding: 10px 14px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.vol-pill:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-light);
+}
+
+.vol-pill.active {
+  background-color: rgba(212, 163, 99, 0.15);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  box-shadow: inset 0 0 0 1px var(--color-gold);
+}
+
+/* Protein Radios */
+.protein-selector-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.protein-radio-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  transition: all var(--transition-fast);
+}
+
+.protein-radio-card.selected {
+  background-color: rgba(212, 163, 99, 0.12);
+  border-color: var(--color-gold);
+}
+
+.protein-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.protein-price {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+/* Extra Protein Portions */
+.extra-proteins-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.extra-portion-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.extra-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.extra-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.extra-cost {
+  font-size: 0.78rem;
+  color: var(--color-gold);
+}
+
+.extra-qty-stepper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mini-step-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-light);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.mini-step-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.mini-qty-val {
+  font-weight: 700;
+  font-size: 0.85rem;
+  min-width: 16px;
+  text-align: center;
+}
+
+/* Preferences Split (Pepper & Spice) */
+.preferences-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.heat-chip {
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.heat-chip.active {
+  background-color: var(--color-spice);
+  color: #fff;
+  border-color: var(--color-spice);
+}
+
+/* 3. Sticky Bottom Bar (Image 1 Style) */
+.detail-bottom-bar {
+  padding: 14px var(--space-lg);
+  background-color: rgba(21, 23, 29, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  z-index: 10;
+}
+
+.bar-stepper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 4px 8px;
+}
+
+.bar-step-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-light);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.bar-step-btn:hover:not(:disabled) {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.bar-step-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.bar-stepper-val {
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  color: var(--color-gold);
+  min-width: 28px;
+  text-align: center;
+}
+
+.btn-order-cta {
+  flex: 1;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, var(--color-gold) 0%, #ba8a4c 100%);
+  color: #121316;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-gold);
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-order-cta:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.btn-cta-price {
+  background-color: rgba(18, 19, 22, 0.25);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+  .mobile-detail-view {
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    border: none;
+  }
+
+  .detail-media-header {
+    height: 240px;
+    min-height: 240px;
+  }
+}

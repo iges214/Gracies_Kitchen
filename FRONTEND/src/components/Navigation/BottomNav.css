@@ -1,0 +1,110 @@
+/* ==========================================================================
+   BOTTOM NAVIGATION BAR STYLES (MOBILE & TABLET ONLY)
+   ========================================================================== */
+
+/* Hidden on desktop viewports */
+@media (min-width: 901px) {
+  .bottom-navigation-bar {
+    display: none !important;
+  }
+}
+
+/* Displayed on screens <= 900px */
+@media (max-width: 900px) {
+  .bottom-navigation-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 990;
+    background-color: rgba(250, 247, 242, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(40, 30, 20, 0.1);
+    box-shadow: 0 -4px 24px rgba(40, 30, 20, 0.08);
+    padding: 6px 12px calc(6px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .bottom-nav-container {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 6px 10px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    color: #6b645b;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    flex: 1;
+    min-width: 54px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .bottom-nav-item:active {
+    transform: scale(0.92);
+  }
+
+  .nav-item-icon-wrap {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .bottom-nav-item svg {
+    transition: all 0.2s;
+  }
+
+  .nav-item-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: color 0.2s;
+  }
+
+  /* Active State */
+  .bottom-nav-item.active {
+    color: var(--color-olive, #344732);
+  }
+
+  .bottom-nav-item.active .nav-item-icon-wrap {
+    background-color: rgba(52, 71, 50, 0.12);
+    color: var(--color-olive, #344732);
+  }
+
+  .bottom-nav-item.active .nav-item-label {
+    font-weight: 700;
+    color: var(--color-olive, #344732);
+  }
+
+  /* Active Indicator Dot */
+  .bottom-nav-item.active::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--color-olive, #344732);
+  }
+
+  /* Ensure page content on mobile doesn't get covered by the bottom bar */
+  body {
+    padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+  }
+}

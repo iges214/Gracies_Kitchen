@@ -1,0 +1,329 @@
+/* ==========================================================================
+   NAVBAR COMPONENT STYLES (MATCHING REFERENCE IMAGE HEADER)
+   ========================================================================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(250, 247, 242, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(40, 30, 20, 0.08);
+  padding: 10px 0;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand Logo (Inspired by Savor Mark in Reference) */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-leaf-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.brand-titles {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand-primary {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.5px;
+}
+
+.brand-subline {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: var(--color-olive);
+  margin-top: 2px;
+}
+
+.brand-tagline {
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  color: #8c8278;
+  margin-top: 2px;
+}
+
+/* Nav Links */
+.navbar-nav {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #4a433d;
+  position: relative;
+  padding: 6px 0;
+  transition: color var(--transition-fast);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: inherit;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--color-olive);
+}
+
+.nav-link.active {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--text-dark);
+  border-radius: 2px;
+}
+
+.nav-link-btn {
+  background: transparent;
+  border: 1px solid rgba(40, 30, 20, 0.15);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #4a433d;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link-btn:hover {
+  background: rgba(40, 30, 20, 0.06);
+  color: var(--text-dark);
+  border-color: rgba(40, 30, 20, 0.3);
+}
+
+.nav-link-btn.track-btn {
+  background: rgba(212, 163, 99, 0.12);
+  border-color: rgba(212, 163, 99, 0.35);
+  color: #8c5b23;
+}
+
+.nav-link-btn.track-btn:hover {
+  background: rgba(212, 163, 99, 0.25);
+  border-color: #d4a373;
+}
+
+.nav-link-btn.admin-btn {
+  background: rgba(74, 93, 35, 0.1);
+  border-color: rgba(74, 93, 35, 0.3);
+  color: var(--color-olive);
+}
+
+.nav-link-btn.admin-btn:hover {
+  background: rgba(74, 93, 35, 0.2);
+  border-color: var(--color-olive);
+}
+
+/* Right Group: Socials + Cart CTA */
+.navbar-right-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.btn-navbar-signin {
+  background: transparent;
+  border: 1px solid rgba(40, 30, 20, 0.2);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #4a433d;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-navbar-signin:hover {
+  background: rgba(40, 30, 20, 0.06);
+  color: var(--text-dark);
+  border-color: rgba(40, 30, 20, 0.4);
+}
+
+.btn-navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(52, 71, 50, 0.08);
+  border: 1px solid rgba(52, 71, 50, 0.25);
+  border-radius: var(--radius-full);
+  padding: 5px 12px 5px 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-navbar-user:hover {
+  background: rgba(52, 71, 50, 0.16);
+  border-color: var(--color-olive);
+}
+
+.user-avatar-pip {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--color-olive);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-name-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #2a2521;
+}
+
+.navbar-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-social-link {
+  font-size: 1rem;
+  color: #5c544d;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.nav-social-link:hover {
+  transform: translateY(-2px);
+}
+
+.nav-social-link.ig-link:hover {
+  color: #e1306c;
+}
+
+.nav-social-link.wa-link:hover {
+  color: #25d366;
+}
+
+.nav-social-link.tt-link:hover {
+  color: #111111;
+}
+
+.btn-navbar-cart {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-olive);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 0 3px 12px rgba(52, 71, 50, 0.25);
+  transition: all var(--transition-fast);
+}
+
+.btn-navbar-cart:hover {
+  background-color: var(--color-olive-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(52, 71, 50, 0.35);
+}
+
+.cart-badge-count {
+  background-color: var(--color-gold);
+  color: #12141a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  min-width: 18px;
+  text-align: center;
+}
+
+/* Responsive Navbar for Small Screens */
+@media (max-width: 900px) {
+  .navbar-nav {
+    display: none !important;
+  }
+
+  .navbar-social-icons {
+    display: none !important;
+  }
+
+  .navbar-container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 8px 0;
+  }
+
+  .brand-leaf-icon {
+    font-size: 1.2rem;
+  }
+
+  .brand-primary {
+    font-size: 1.35rem;
+  }
+
+  .brand-subline {
+    font-size: 0.52rem;
+    letter-spacing: 1.4px;
+  }
+
+  .brand-tagline {
+    display: none;
+  }
+
+  .btn-navbar-cart {
+    padding: 7px 12px;
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+
+  .cart-pot-icon {
+    width: 16px;
+    height: 16px;
+  }
+}

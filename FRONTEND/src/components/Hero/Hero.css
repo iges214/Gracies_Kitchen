@@ -1,0 +1,204 @@
+/* ==========================================================================
+   HERO COMPONENT STYLES (BATCH PRIVATE CHEF CATERING)
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Background image & gradient overlay */
+.hero-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* Dark subtle left-to-right gradient so white text pops effortlessly */
+  background: linear-gradient(
+    to right,
+    rgba(14, 14, 18, 0.92) 0%,
+    rgba(14, 14, 18, 0.80) 40%,
+    rgba(14, 14, 18, 0.35) 75%,
+    rgba(14, 14, 18, 0.15) 100%
+  );
+}
+
+/* Container */
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+/* Left Content */
+.hero-content {
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-tag-kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 2.2px;
+  color: var(--color-gold);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 3.8rem;
+  line-height: 1.12;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+
+.title-accent {
+  color: var(--color-gold);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  margin-top: 18px;
+  margin-bottom: 28px;
+  font-weight: 400;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-hero-terracotta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background-color: var(--color-terracotta);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 6px 20px rgba(209, 107, 78, 0.4);
+  transition: all var(--transition-fast);
+}
+
+.btn-hero-terracotta:hover {
+  background-color: var(--color-terracotta-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(209, 107, 78, 0.5);
+}
+
+.btn-hero-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 26px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  transition: all var(--transition-fast);
+}
+
+.btn-hero-outline:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Batch Value Badges */
+.hero-batch-pills {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.batch-pill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(14, 14, 18, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  color: #f0ede8;
+  font-weight: 500;
+}
+
+.pill-icon {
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+  .hero-section {
+    min-height: 540px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(14, 14, 18, 0.88) 0%,
+      rgba(14, 14, 18, 0.92) 100%
+    );
+  }
+}
+
+@media (max-width: 580px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-hero-terracotta,
+  .btn-hero-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}

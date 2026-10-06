@@ -1,0 +1,258 @@
+/* ==========================================================================
+   VOLUME DISCOUNT BANNER (LUXURY CHARCOAL & TERRACOTTA PALETTE)
+   Strictly adheres to Hero, About, and Footer palette — ZERO YELLOW.
+   ========================================================================== */
+
+.discount-section {
+  padding: var(--space-2xl) 0 var(--space-3xl);
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Luxury Charcoal & Terracotta Banner Card */
+.discount-promo-banner {
+  background: linear-gradient(135deg, #181b22 0%, #12141a 100%);
+  border: 1px solid rgba(209, 107, 78, 0.3);
+  border-radius: 18px;
+  padding: 30px 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.discount-promo-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(209, 107, 78, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Common Column Styling */
+.banner-col {
+  display: flex;
+  align-items: center;
+}
+
+/* Left Column: Clock & Lead */
+.banner-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 250px;
+}
+
+.banner-clock-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(209, 107, 78, 0.1);
+  border: 1px solid rgba(209, 107, 78, 0.28);
+}
+
+.banner-lead-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.banner-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--color-terracotta);
+  text-transform: uppercase;
+}
+
+.banner-punchline {
+  font-family: var(--font-sans);
+  font-size: 2.1rem;
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 3px 0 0;
+}
+
+.banner-punchline span {
+  font-size: 2.3rem;
+  display: block;
+  color: var(--color-terracotta);
+}
+
+/* Vertical Divider */
+.banner-divider {
+  width: 1px;
+  height: 95px;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.14) 20%, rgba(255, 255, 255, 0.14) 80%, transparent);
+  flex-shrink: 0;
+}
+
+/* Center Column: 10% Discount & Auto-Applied Code */
+.banner-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 10px;
+}
+
+.discount-get-label {
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #9ba0aa;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.discount-headline-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 3px;
+}
+
+.discount-huge-num {
+  font-family: var(--font-sans);
+  font-size: 3.8rem;
+  font-weight: 950;
+  line-height: 0.88;
+  color: #ffffff;
+  letter-spacing: -2px;
+}
+
+.discount-huge-sub {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.huge-off {
+  font-family: var(--font-sans);
+  font-size: 2.2rem;
+  font-weight: 950;
+  color: var(--color-terracotta);
+  line-height: 0.9;
+}
+
+.huge-condition {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #f5efe6;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+/* Terracotta Coupon Pill matching Hero CTA Theme */
+.banner-coupon-pill {
+  background: rgba(209, 107, 78, 0.14);
+  border: 1.5px dashed rgba(209, 107, 78, 0.55);
+  color: #ffffff;
+  border-radius: var(--radius-full);
+  padding: 6px 18px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  display: inline-block;
+  margin: 10px 0 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.banner-explanation {
+  font-size: 0.85rem;
+  color: #9ba0aa;
+  font-weight: 500;
+  line-height: 1.45;
+  max-width: 480px;
+}
+
+/* Right Column: Scooter Delivery & CTA */
+.banner-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.scooter-illustration-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
+}
+
+.btn-banner-order {
+  background-color: var(--color-terracotta);
+  color: #ffffff;
+  padding: 11px 26px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(209, 107, 78, 0.4);
+}
+
+.btn-banner-order:hover {
+  background-color: var(--color-terracotta-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(209, 107, 78, 0.55);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .discount-promo-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 24px;
+    gap: 24px;
+  }
+
+  .banner-left {
+    justify-content: center;
+  }
+
+  .banner-divider {
+    width: 60%;
+    height: 1px;
+  }
+
+  .banner-center {
+    align-items: center;
+    padding: 0;
+  }
+
+  .discount-headline-row {
+    justify-content: center;
+  }
+
+  .banner-right {
+    width: 100%;
+  }
+
+  .btn-banner-order {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+  }
+}
